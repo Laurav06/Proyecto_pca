@@ -1,0 +1,32 @@
+ion-slides {
+    background-color: white;
+    height: 100%;
+    max-width: 800px;
+}
+.swiper-slide {
+    display: block;
+    background-color: var(--titulo) ;
+    padding: 20px 0px 20px 0px;
+}
+
+ion-slide > h1,h2 {
+    color: var(--letra);
+    font-style: initial;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+ion-slide > p {
+    font-style: oblique;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;;
+    border: solid;
+    border-color: black;
+    padding: 20px 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
+}
+
+ion-slide > ion-icon[name="close"] {
+    float: right;
+    color: var(--ion-color-#17202A);
+    font-size: 40px;
+}

@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="goToLogin()">
+        Back
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<figure class="size-logo">
+  <img src="https://img.freepik.com/vector-premium/plantilla-logotipo-libreria-diseno-plano-dibujado-mano_23-2149337113.jpg?w=2000" />
+</figure>
+<form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input placeholder="Nombre" formControlName="name"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input placeholder="Apellido" formControlName="last_name"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-select placeholder="Tipo de Documento" formControlName="document_type">
+        <ion-select-option value="CC">Cedula</ion-select-option>
+        <ion-select-option value="TT">Tarjeta de Identidad</ion-select-option>
+        <ion-select-option value="PAP">Pasaporte</ion-select-option>
+        <ion-select-option value="etc">Otros</ion-select-option>
+    </ion-select>
+</ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Numero documento</ion-label>
+    <ion-input placeholder="Numero" formControlName="document_number"> </ion-input>
+  </ion-item>
+  
+  <ion-list>
+    <ion-item>
+      <ion-select interface="popover" placeholder="Carrera" formControlName="career">
+        <ion-select-option value="Carrera">Ingenieria de Sistemas</ion-select-option>
+        <ion-select-option value="Carrera">Ingenieria Civil</ion-select-option>
+        <ion-select-option value="Carrera">Contaduria Publica</ion-select-option>
+        <ion-select-option value="Carrera">Medicina</ion-select-option>
+        <ion-select-option value="Carrera">Psicologia</ion-select-option>
+        <ion-select-option value="Carrera">Otros</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input placeholder="Email" formControlName="email"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+  </ion-item>
+
+  <ion-button 
+shape="round"
+color="warning"
+type="submit">
+  Registrarse
+</ion-button>
+
+</form>
+
+
+</ion-content>
