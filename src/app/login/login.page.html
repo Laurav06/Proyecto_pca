@@ -1,66 +1,63 @@
 <ion-content>
-  <figure class="size-logo">
-    <img src="./assets/logo_Better.jpg" width="1000" height="1000" style="vertical-align:middle;margin:0px 50px"/>
-  </figure>
-
-  <ion-grid class="grid1">
-  
-      <ion-row class="blue">
-          <ion-col>
-  
-          </ion-col>
-      </ion-row>
-  
-      <ion-row class="row2">
-          <ion-col>
-  
-          </ion-col>
-      </ion-row>
-  
-  </ion-grid>
-  
-  <ion-slide>
-      <div class="contaier-login">
-          <ion-grid>
-              <ion-row>
-                  <ion-col>
-                      <h1>Iniciar Sesión</h1>
-                  </ion-col>
-              </ion-row>
-              <ion-row>
-                  <ion-col>
-                      <ion-list>
-  
-                          <ion-item>
-                              <ion-icon name="person" class="icon-login"></ion-icon>
-                              <ion-input name="user" type="text" required placeholder="Usuario"></ion-input>
-                          </ion-item>
-                          <br />
-                          <ion-item>
-                              <ion-icon name="lock" class="icon-login"></ion-icon>
-                              <ion-input name="password" type="password" required placeholder="Contraseña"></ion-input>
-                          </ion-item>
-  
-                      </ion-list>
-                  </ion-col>
-              </ion-row>
-              <ion-row>
-                  <ion-col>
-                      <ion-button shape="round" fill="solid" expand ="full" type="button" (click)="irEntrar()">
-                          Entrar
-                      </ion-button>
-                      <ion-button shape="round" fill="solid" expand ="full" type="button" (click)="irRegistro()">
+    <figure class="size-logo">
+    <img src="./assets/logo_Better.jpg" width="200" height="200"/>
+    </figure>
+    <ion-grid class="grid1">
+    
+        <ion-row class="blue">
+            <ion-col>
+    
+            </ion-col>
+        </ion-row>
+    
+        <ion-row class="row2">
+            <ion-col>
+    
+            </ion-col>
+        </ion-row>
+    
+    </ion-grid>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+        <div class="contaier-login">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <h1>Iniciar Sesión</h1>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-list>
+                            <ion-item>
+                                <ion-icon name="person" class="icon-login"></ion-icon>
+                                <ion-input name="user" type="text" required placeholder="Usuario"formControlName="email"></ion-input>
+                            </ion-item>
+                            <br />
+                            <ion-item>
+                                <ion-icon name="lock" class="icon-login"></ion-icon>
+                                <ion-input name="password" type="password" required placeholder="Contraseña"formControlName="password"></ion-input>
+                            </ion-item>
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-button shape="round" fill="solid" expand ="full" type ="submit" >
+                        Entrar
+                        </ion-button>
+                        <ion-button shape="round" fill="solid" expand ="full" type="button" (click)="irRegistro()">
                         Registro
                     </ion-button>
-                  </ion-col>
-              </ion-row>
-              <ion-row>
-                  <ion-col>
-                      <ion-label>
-                          <h3>¿Olvido la contraseña?</h3>
-                      </ion-label>
-                  </ion-col>
-              </ion-row>
-          </ion-grid>
-      </div>
-  </ion-slide>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-label>
+                            <h3>¿Olvido la contraseña?</h3>
+                        </ion-label>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </form>

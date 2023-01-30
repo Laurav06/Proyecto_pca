@@ -1,0 +1,30 @@
+ion-avatar img {
+    width: 220px;
+    height: 220px;
+}
+
+ion-avatar {
+    margin-top: 10px;
+    height: 230px;
+    width: 100%;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.fontRoboto {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.colum2 {
+    flex-basis: 70%;
+}
+
+.colum1 {
+    flex-basis: 5%;
+}
