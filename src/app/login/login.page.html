@@ -1,47 +1,45 @@
-<ion-content>
+<ion-header>
+    <ion-toolbar>
+        <ion-title text-center>LOGIN</ion-title>
+    </ion-toolbar>
     <figure class="size-logo">
-    <img src="./assets/logo_Better.jpg" width="200" height="200"/>
+        <img src="./assets/logo_Better.jpg" width="200" height="200" />
     </figure>
+
+</ion-header>
+
+<ion-content>
     <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
-        <div class="contaier-login">
-            <ion-grid >
-                <ion-row>
-                    <ion-col>
-                        <h1>Iniciar Sesión</h1>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col>
-                        <ion-list>
-                            <ion-item>
-                                <ion-icon name="person" class="icon-login"></ion-icon>
-                                <ion-input name="user" type="text" required placeholder="Usuario"formControlName="email"></ion-input>
-                            </ion-item>
-                            <br />
-                            <ion-item>
-                                <ion-icon name="lock" class="icon-login"></ion-icon>
-                                <ion-input name="password" type="password" required placeholder="Contraseña"formControlName="password"></ion-input>
-                            </ion-item>
-                        </ion-list>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col>
-                        <ion-button shape="round" fill="solid" expand ="full" type ="submit" >
-                        Entrar
-                        </ion-button>
-                        <ion-button shape="round" fill="solid" expand ="full" type="button" (click)="irRegistro()">
-                        Registro
-                    </ion-button>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col>
-                        <ion-label>
-                            <h3>¿Olvido la contraseña?</h3>
-                        </ion-label>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
+
+        <ion-item fill="solid">
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="email"></ion-input>
+        </ion-item>
+
+        <div>
+            <ng-container *ngFor="let validation of validation_message.email">
+                <div *ngIf="loginForm.get('email')?.hasError(validation.type) && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+                    {{validation.message}}
+                </div>
+            </ng-container>
         </div>
-    </form>
+
+        <ion-item fill="solid">
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+
+        <div>
+            <ng-container *ngFor="let validation of validation_message.password">
+                <div *ngIf="loginForm.get('password')?.hasError(validation.type) && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+                    {{validation.message}}
+                </div>
+            </ng-container>
+        </div>
+
+        <ion-button shape="around" color="success" [disabled]="!loginForm.valid" type="submit">
+            Login
+        </ion-button>
+        <ion-button shape="round" fill="solid" expand="full" type="button" (click)="irRegistro()">
+            Registro
+        </ion-button>

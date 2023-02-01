@@ -32,7 +32,7 @@ export class IntroPage implements OnInit {
     {
       title: "EL PODER DE LAS PALABRAS.",
       subtitle: "MARIANO SIGMAN",
-      img: "https://image.cdn0.buscalibre.com/633713f9d5accf18f3194362.__RSF640x640__.jpg",
+      img: "https://d3tbgcbuarzgxm.cloudfront.net/filer_public/46/e2/46e2f6e5-d4ae-4237-8547-246c60bda9f6/el_poder_de_las_palabras.png",
       description: "Como cambiar tu cerebro (y tu vida)conversando."
     },
     {
